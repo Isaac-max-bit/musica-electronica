@@ -1,182 +1,595 @@
-/* GLOBAL */
+/* ================================
+   RESET Y BASE
+================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Arial", sans-serif;
 }
 
 body {
-    color: white;
     background: #0a0a0a;
+    color: #fff;
     line-height: 1.6;
 }
 
-/* NAVBAR */
-header {
+/* Colores base */
+:root {
+    --primary: #031655;
+    /* Azul moderno */
+    --secondary: #1bd6b8;
+    /* Verde agua */
+    --yellow: #fffb11;
+    --dark: #0a0a0a;
+    --light: #ffffff;
+    --gray: #cfcfcf;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+.navbar {
+    width: 100%;
+    padding: 20px 60px;
+    background: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: #000;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
 }
 
-nav a {
-    margin-left: 15px;
-    color: white;
+.navbar .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    margin-left: 20px;
     text-decoration: none;
-    font-size: 14px;
+    color: var(--light);
+    font-size: 1rem;
+    transition: 0.3s ease;
 }
 
-nav a:hover {
-    color: #fffb11;
+.navbar nav a:hover {
+    color: var(--yellow);
 }
 
-/* HERO */
+/* ================================
+   BOTÓN GLOBAL
+================================ */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--secondary);
+    color: black;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--yellow);
+}
+
+/* ================================
+   HERO
+================================ */
 .hero {
+    background: url("../img/fondo-electronica.jpg") center/cover no-repeat;
+    padding: 140px 20px;
     text-align: center;
-    padding: 150px 20px;
-    background: url('../img/fondo-electronica.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content {
+    width: 80%;
+    max-width: 900px;
 }
 
 .hero h1 {
     font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
     text-transform: uppercase;
     animation: fadeIn 2s ease-in-out;
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin: 15px 0;
+    margin-bottom: 20px;
+    color: #f1f1f1;
 }
 
-/* BUTTON */
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 25px;
-    background: #fffb11;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* SERVICIOS */
-.services {
-    text-align: center;
-    padding: 60px 20px;
-    background: #111;
-}
-
-.services .description {
-    margin: 10px auto 40px;
-    max-width: 600px;
-}
-
-.items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.item {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-    transition: transform 0.3s;
-}
-
-.item:hover {
-    transform: scale(1.05);
-}
-
-/* EVENTOS */
-.about {
+/* ================================
+   SECCIÓN DESTACADA (mitad imagen / mitad texto)
+================================ */
+.destacado {
     display: flex;
     align-items: center;
-    padding: 60px 20px;
+    padding: 80px 60px;
+    background: #101010;
+}
+
+.destacado img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.destacado-text {
+    width: 50%;
+    padding-left: 40px;
+}
+
+.destacado-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.destacado-text p {
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+/* ================================
+   WHY CHOOSE US
+================================ */
+.why {
+    padding: 80px 60px;
+    background: var(--primary);
+    text-align: center;
+    color: white;
+}
+
+.why h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.why-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.why-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.why-item:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+.why-item h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.why-item p {
+    color: #eaeaea;
+}
+
+/* ================================
+   SERVICIOS
+================================ */
+.services {
+    padding: 80px 60px;
+    text-align: center;
     background: #151515;
 }
 
-.about img {
-    width: 40%;
-    border-radius: 10px;
+.services h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
-.about div {
-    padding-left: 30px;
-    max-width: 600px;
-}
-
-/* GALERÍA */
-.gallery {
-    text-align: center;
-    padding: 60px 20px;
-    background: #111;
-}
-
-.gallery-grid {
-    margin-top: 30px;
+.services-box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-.gallery-grid img {
-    width: 100%;
+.services-box div {
+    padding: 25px;
+    background: #1f1f1f;
     border-radius: 10px;
+    text-align: left;
+    transition: 0.3s ease;
 }
 
-/* CONTACTO */
-.contact {
+.services-box div:hover {
+    transform: translateY(-4px);
+    background: #262626;
+}
+
+.services-box h3 {
+    margin-bottom: 10px;
+    color: var(--secondary);
+}
+
+/* ================================
+   EVENTOS - INTERNACIONALES
+================================ */
+.eventos {
+    padding: 80px 60px;
+    background: #031655;
+    color: gray;
     text-align: center;
-    padding: 60px 20px;
-    background: #111;
-}
-
-.contact form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: auto;
+    align-items: center;
 }
 
-.contact input,
-.contact textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
+.eventos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #000;
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1100px;
 }
 
-/* ANIMACIÓN */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.evento {
+    background: #f5f4f4cc;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.evento:hover {
+    transform: translateY(-5px);
+}
+
+.evento img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.evento h3 {
+    font-size: 1.3rem;
+    margin: 15px;
+}
+
+.evento p {
+    margin: 0 15px 20px 15px;
+}
+
+/* Botón redondeado tipo "píldora" */
+.eventos-btn-pill {
+    margin-top: 25px;
+    padding: 14px 40px;
+    background: black;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid black;
+    transition: 0.3s ease;
+}
+
+.eventos-btn-pill:hover {
+    background: yellowgreen;
+    color: whitesmoke;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .items, .about {
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   NOSOTROS
+================================ */
+.sobre {
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    background: #111;
+}
+
+.sobre img {
+    width: 45%;
+    border-radius: 10px;
+}
+
+.sobre div {
+    width: 55%;
+    padding-left: 40px;
+}
+
+.sobre h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.sobre h3 {
+    color: var(--secondary);
+    margin-top: 20px;
+}
+
+.sobre p {
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* ================================
+   CONTACTO
+================================ */
+.contact {
+    text-align: center;
+    padding: 80px 60px;
+    background: #151515;
+}
+
+.contact p {
+    color: #ccc;
+}
+
+form {
+    max-width: 450px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: rgb(216, 215, 215);
+    color: black;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+
+/* ============================
+   FOOTER MODERNO
+============================ */
+footer {
+    background: #000;
+    padding: 50px 0 20px;
+    color: #ccc;
+    margin-top: 60px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.footer-logo p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.footer-links h4,
+.footer-info h4,
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--secondary);
+}
+
+.footer-links a {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--yellow);
+    transform: translateX(4px);
+}
+
+.footer-info p {
+    margin-bottom: 8px;
+    color: #bfbfbf;
+}
+
+.footer-social .social-icons a {
+    font-size: 1.3rem;
+    margin-right: 12px;
+    text-decoration: none;
+    color: var(--secondary);
+    transition: 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+    color: var(--yellow);
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    .footer-social .social-icons a {
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ================================
+   ANIMACIÓN HERO
+================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+
+    .destacado,
+    .sobre {
         flex-direction: column;
         text-align: center;
     }
 
-    .about img {
-        width: 80%;
+    .destacado img,
+    .sobre img {
+        width: 90%;
         margin-bottom: 20px;
+    }
+
+    .destacado-text,
+    .sobre div {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .services-box,
+    .eventos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .services-box,
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-items {
+        flex-direction: column;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+}
+
+
+/* ================================
+   ARTISTAS ELECTRÓNICOS
+================================ */
+.artistas {
+    padding: 80px 60px;
+    text-align: center;
+    background: #101010;
+}
+
+.artistas h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--secondary);
+}
+
+.artistas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.artista {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.artista img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.artista h3 {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    color: var(--yellow);
+}
+
+.artista p {
+    margin-top: 5px;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.artista:hover {
+    transform: translateY(-5px);
+    background: #222;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .artistas-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .artistas-grid {
+        grid-template-columns: 1fr;
     }
 }

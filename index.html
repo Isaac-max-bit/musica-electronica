@@ -1,142 +1,262 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="img/electro.png" />
-    <title>ElectroBeat</title>
+    <title>ElectroBeat - Música Electrónica</title>
     <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+  </head>
 
+  <body>
     <!-- NAVBAR -->
-    <header>
-        <div class="logo">⚡ ElectroBeat</div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#eventos">Eventos</a>
-            <a href="#galeria">Galería</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <header class="navbar">
+      <div class="logo">⚡ ElectroBeat</div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#sobre">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </header>
 
     <!-- HERO -->
     <section id="inicio" class="hero">
-        <h1>Vive la música electrónica</h1>
+      <div class="hero-content">
+        <h1>ESCUCHA ELECTROBEAT EN CUALQUIER LUGAR</h1>
         <p>
-            Sumérgete en una experiencia llena de luces, beats potentes y 
-            atmosferas únicas que solo la electrónica puede ofrecer.
+          Descubre mezclas exclusivas, eventos electrónicos y experiencias
+          inmersivas creadas para verdaderos amantes del beat.
         </p>
-        <a href="#servicios" class="btn">Explorar</a>
+        <a href="#servicios" class="btn">Descubrir más</a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DESTACADA -->
+    <section class="destacado">
+      <img src="img/dj-mix.jpg" alt="DJ tocando en vivo" />
+      <div class="destacado-text">
+        <h2>ELECTROBEAT: TU MUNDO ELECTRÓNICO</h2>
+        <p>
+          Sumérgete en un universo donde la música electrónica cobra vida. Desde
+          mezclas exclusivas hasta presentaciones en vivo, somos el espacio
+          donde los beats se encuentran con la creatividad audiovisual.
+        </p>
+        <p>
+          Creamos experiencias que conectan a artistas, fans y productores de la
+          escena electrónica a nivel global.
+        </p>
+        <a href="#eventos" class="btn">Saber más</a>
+      </div>
+    </section>
+
+    <!-- ARTISTAS ELECTRÓNICOS -->
+    <section class="artistas">
+      <h2>ARTISTAS DESTACADOS</h2>
+
+      <div class="artistas-grid">
+        <div class="artista">
+          <img src="img/artist1.jpg" alt="David Guetta" />
+          <h3>David Guetta</h3>
+          <p>Canción famosa: <strong>Titanium</strong></p>
+        </div>
+
+        <div class="artista">
+          <img src="img/artist2.jpg" alt="Martin Garrix" />
+          <h3>Martin Garrix</h3>
+          <p>Canción famosa: <strong>Animals</strong></p>
+        </div>
+
+        <div class="artista">
+          <img src="img/artist3.jpg" alt="Calvin Harris" />
+          <h3>Calvin Harris</h3>
+          <p>Canción famosa: <strong>Summer</strong></p>
+        </div>
+
+        <div class="artista">
+          <img src="img/artist4.jpg" alt="Marshmello" />
+          <h3>Marshmello</h3>
+          <p>Canción famosa: <strong>Alone</strong></p>
+        </div>
+
+        <div class="artista">
+          <img src="img/artist5.jpg" alt="Deadmau5" />
+          <h3>Deadmau5</h3>
+          <p>Canción famosa: <strong>Ghosts 'n' Stuff</strong></p>
+        </div>
+
+        <div class="artista">
+          <img src="img/artist6.jpg" alt="Skrillex" />
+          <h3>Skrillex</h3>
+          <p>Canción famosa: <strong>Bangarang</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="why">
+      <h2>¿POR QUÉ ELEGIR ELECTROBEAT?</h2>
+
+      <div class="why-items">
+        <div class="why-item">
+          ⚡
+          <h3>Calidad Profesional</h3>
+          <p>Trabajamos con DJs y productores de renombre mundial.</p>
+        </div>
+
+        <div class="why-item">
+          🎧
+          <h3>Experiencia Sonora</h3>
+          <p>Sonido envolvente optimizado para cada presentación.</p>
+        </div>
+
+        <div class="why-item">
+          🌍
+          <h3>Presencia Global</h3>
+          <p>Eventos internacionales en Europa, Asia y Latinoamérica.</p>
+        </div>
+      </div>
     </section>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="services">
-        <h2>¿Qué ofrecemos?</h2>
-        <p class="description">
-            Somos expertos en crear experiencias electrónicas inmersivas, 
-            diseñadas para festivales, clubes nocturnos y eventos privados.
-        </p>
+      <h2>NUESTROS SERVICIOS</h2>
 
-        <div class="items">
-            <div class="item">
-                🎧
-                <h3>Sets de DJ</h3>
-                <p>
-                    Mezclas profesionales creadas por DJs especializados en 
-                    EDM, house, techno y trance.
-                </p>
-            </div>
-
-            <div class="item">
-                🔊
-                <h3>Eventos en vivo</h3>
-                <p>
-                    Sonido de alta fidelidad y ambientes únicos para vivir la 
-                    electrónica como nunca antes.
-                </p>
-            </div>
-
-            <div class="item">
-                💡
-                <h3>Visuales LED</h3>
-                <p>
-                    Visuales dinámicos y sincronizados con la música, ideales 
-                    para escenarios y presentaciones.
-                </p>
-            </div>
-
-            <div class="item">
-                🎛️
-                <h3>Producción Musical</h3>
-                <p>
-                    Creamos pistas electrónicas originales para artistas, 
-                    marcas y videojuegos.
-                </p>
-            </div>
+      <div class="services-box">
+        <div>
+          <h3>Mixes Exclusivos</h3>
+          <p>
+            Sesiones personalizadas creadas por DJs expertos en música
+            electrónica.
+          </p>
         </div>
-    </section>
-
-    <!-- EVENTOS -->
-    <section id="eventos" class="about">
-        <img src="img/dj-mix.jpg" alt="DJ tocando música electrónica" />
 
         <div>
-            <h2>Próximos Eventos</h2>
-
-            <p>
-                Prepárate para vivir noches llenas de energía con artistas 
-                emergentes, efectos visuales espectaculares y sonido envolvente.
-            </p>
-
-            <p>
-                Cada evento es diseñado para que sientas la vibra electrónica 
-                desde el primer beat hasta el último.
-            </p>
-
-            <a href="#contacto" class="btn">Más info</a>
+          <h3>Presentaciones en Vivo</h3>
+          <p>
+            Eventos inmersivos con sonido profesional y ambientación temática.
+          </p>
         </div>
+
+        <div>
+          <h3>Iluminación y Visuales</h3>
+          <p>Proyecciones LED y efectos sincronizados con tu música.</p>
+        </div>
+
+        <div>
+          <h3>Producción de Audio</h3>
+          <p>Servicios profesionales de mezcla y masterización electrónica.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section id="galeria" class="gallery">
-        <h2>Galería Electrónica</h2>
-        <p>Revive los mejores momentos de nuestros eventos.</p>
+    <!-- EVENTOS (con internacionales) -->
+    <section id="eventos" class="eventos">
+      <h2>Próximos Eventos</h2>
 
-        <div class="gallery-grid">
-            <img src="img/galeria1.jpg" alt="Luces electrónicas" />
-            <img src="img/galeria2.jpg" alt="Festival electrónico" />
-            <img src="img/galeria3.jpg" alt="Público en concierto" />
+      <div class="eventos-grid">
+        <div class="evento">
+          <img src="img/evento1.jpg" alt="Evento 1" />
+          <h3>Ultra Music Festival</h3>
+          <p>Miami - Marzo 2025</p>
         </div>
+
+        <div class="evento">
+          <img src="img/evento2.jpg" alt="Evento 2" />
+          <h3>Tomorrowland</h3>
+          <p>Bélgica - Julio 2025</p>
+        </div>
+
+        <div class="evento">
+          <img src="img/evento3.jpg" alt="Evento 3" />
+          <h3>EDC Las Vegas</h3>
+          <p>Estados Unidos - Mayo 2025</p>
+        </div>
+      </div>
+
+      <a href="#contacto" class="btn eventos-btn-pill">Más información</a>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="sobre" class="sobre">
+      <img src="img/dj2.jpg" alt="DJ moderno" />
+      <div>
+        <h2>SOMOS ELECTROBEAT</h2>
+        <h3>Pasión por la música electrónica</h3>
+
+        <p>
+          Somos una comunidad global dedicada a crear experiencias musicales
+          innovadoras. Combinamos sonido, diseño visual y tecnología para
+          ofrecer presentaciones únicas con artistas emergentes y reconocidos.
+        </p>
+
+        <h3>Nuestra Visión</h3>
+        <p>
+          Ser la plataforma digital #1 de contenido electrónico, eventos y
+          producción musical.
+        </p>
+
+        <h3>Nuestra Misión</h3>
+        <p>
+          Inspirar y conectar a los fans del género a través de experiencias
+          auténticas y memorables.
+        </p>
+      </div>
     </section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="contact">
-        <h2>Contacto</h2>
+      <h2>CONTÁCTANOS</h2>
+      <p>
+        ¿Tienes preguntas, propuestas o deseas reservar un evento? Escríbenos.
+      </p>
 
-        <p>
-            ¿Deseas colaborar, contratar nuestros servicios o tienes alguna pregunta?  
-            ¡Estamos listos para ayudarte!
-        </p>
-
-        <form>
-            <input type="text" placeholder="Tu Nombre" required />
-            <input type="email" placeholder="Tu Correo Electrónico" required />
-            <textarea placeholder="Tu Mensaje" required></textarea>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
+      <form>
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo electrónico" required />
+        <textarea placeholder="Tu mensaje" required></textarea>
+        <button class="btn">Enviar</button>
+      </form>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2025 ElectroBeat - Música Electrónica y Eventos Profesionales</p>
+      <div class="footer-container">
+        <div class="footer-logo">
+          ⚡ <span>ElectroBeat</span>
+          <p>Vive la energía de la música electrónica.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Explorar</h4>
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#eventos">Eventos</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div class="footer-info">
+          <h4>Contacto</h4>
+          <p>📧 contacto@electrobeat.com</p>
+          <p>📍 Medellín, Colombia</p>
+          <p>☎ +57 320 000 0000</p>
+        </div>
+
+        <div class="footer-social">
+          <h4>Síguenos</h4>
+          <div class="social-icons">
+            <a href="#">🌐</a>
+            <a href="#">📷</a>
+            <a href="#">▶</a>
+            <a href="#">🎵</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 ElectroBeat — Todos los derechos reservados</p>
+      </div>
     </footer>
-
-    <!-- ALERT (PRUEBA) -->
-    <script>
-        alert("Bienvenido a ElectroBeat ⚡🎧");
-    </script>
-
-</body>
+  </body>
 </html>
