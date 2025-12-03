@@ -1,88 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="img/electro.png" />
     <title>ElectroBeat</title>
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+</head>
+<body>
+
     <!-- NAVBAR -->
     <header>
-      <div class="logo">⚡ ElectroBeat</div>
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#eventos">Eventos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+        <div class="logo">⚡ ElectroBeat</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
 
     <!-- HERO -->
     <section id="inicio" class="hero">
-      <h1>Vive la música electrónica</h1>
-      <p>
-        Siente la energía de los beats electrónicos. ¡Donde el sonido cobra
-        vida!
-      </p>
-      <a href="#servicios" class="btn">Explorar</a>
+        <h1>Vive la música electrónica</h1>
+        <p>
+            Sumérgete en una experiencia llena de luces, beats potentes y 
+            atmosferas únicas que solo la electrónica puede ofrecer.
+        </p>
+        <a href="#servicios" class="btn">Explorar</a>
     </section>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="services">
-      <h2>¿Qué ofrecemos?</h2>
-      <div class="items">
-        <div class="item">
-          🎧
-          <h3>Sets de DJ</h3>
-          <p>Los mejores mixes de música electrónica.</p>
+        <h2>¿Qué ofrecemos?</h2>
+        <p class="description">
+            Somos expertos en crear experiencias electrónicas inmersivas, 
+            diseñadas para festivales, clubes nocturnos y eventos privados.
+        </p>
+
+        <div class="items">
+            <div class="item">
+                🎧
+                <h3>Sets de DJ</h3>
+                <p>
+                    Mezclas profesionales creadas por DJs especializados en 
+                    EDM, house, techno y trance.
+                </p>
+            </div>
+
+            <div class="item">
+                🔊
+                <h3>Eventos en vivo</h3>
+                <p>
+                    Sonido de alta fidelidad y ambientes únicos para vivir la 
+                    electrónica como nunca antes.
+                </p>
+            </div>
+
+            <div class="item">
+                💡
+                <h3>Visuales LED</h3>
+                <p>
+                    Visuales dinámicos y sincronizados con la música, ideales 
+                    para escenarios y presentaciones.
+                </p>
+            </div>
+
+            <div class="item">
+                🎛️
+                <h3>Producción Musical</h3>
+                <p>
+                    Creamos pistas electrónicas originales para artistas, 
+                    marcas y videojuegos.
+                </p>
+            </div>
         </div>
-        <div class="item">
-          🔊
-          <h3>Eventos en vivo</h3>
-          <p>Experiencias con sonido envolvente.</p>
-        </div>
-        <div class="item">
-          💡
-          <h3>Visuales LED</h3>
-          <p>Efectos visuales sincronizados con la música.</p>
-        </div>
-      </div>
     </section>
 
     <!-- EVENTOS -->
-     <section id="eventos" class="about">
-        <img src="img/dj-mix.jpg" alt="DJ mix">
+    <section id="eventos" class="about">
+        <img src="img/dj-mix.jpg" alt="DJ tocando música electrónica" />
+
         <div>
             <h2>Próximos Eventos</h2>
-            <p>Vive la noche electrónica con artistas emergentes y efectos audiovisuales únicos.</p>
+
+            <p>
+                Prepárate para vivir noches llenas de energía con artistas 
+                emergentes, efectos visuales espectaculares y sonido envolvente.
+            </p>
+
+            <p>
+                Cada evento es diseñado para que sientas la vibra electrónica 
+                desde el primer beat hasta el último.
+            </p>
+
             <a href="#contacto" class="btn">Más info</a>
         </div>
-     </section>
+    </section>
 
-     <!-- CONTACTO -->
-     <section id="contacto" class="contact">
+    <!-- GALERÍA -->
+    <section id="galeria" class="gallery">
+        <h2>Galería Electrónica</h2>
+        <p>Revive los mejores momentos de nuestros eventos.</p>
+
+        <div class="gallery-grid">
+            <img src="img/galeria1.jpg" alt="Luces electrónicas" />
+            <img src="img/galeria2.jpg" alt="Festival electrónico" />
+            <img src="img/galeria3.jpg" alt="Público en concierto" />
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact">
         <h2>Contacto</h2>
-        <p>¿Tienes preguntas o quieres reservar un evento? Contáctanos.</p>
+
+        <p>
+            ¿Deseas colaborar, contratar nuestros servicios o tienes alguna pregunta?  
+            ¡Estamos listos para ayudarte!
+        </p>
+
         <form>
-          <input type="text" placeholder="Tu Nombre" required />
-          <input type="email" placeholder="Tu Correo electrónico" required />
-          <textarea placeholder="Tu Mensaje" required></textarea>
-          <button type="submit" class="btn">Enviar</button>
+            <input type="text" placeholder="Tu Nombre" required />
+            <input type="email" placeholder="Tu Correo Electrónico" required />
+            <textarea placeholder="Tu Mensaje" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
         </form>
-     </section>
+    </section>
 
-     <!-- FOOTER -->
-      <footer>
-        <p>© 2025 ElectroBeat - Todos los derechos reservados</p>
-      </footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 ElectroBeat - Música Electrónica y Eventos Profesionales</p>
+    </footer>
 
-         <!-- ALERT DE PRUEBA (ELIMINAR EN LA ENTREGA FINAL) -->
-     <script>
+    <!-- ALERT (PRUEBA) -->
+    <script>
         alert("Bienvenido a ElectroBeat ⚡🎧");
-     </script>
-  </body>
-</html>
-  </body>
+    </script>
+
+</body>
 </html>

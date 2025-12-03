@@ -9,6 +9,7 @@
 body {
     color: white;
     background: #0a0a0a;
+    line-height: 1.6;
 }
 
 /* NAVBAR */
@@ -20,6 +21,7 @@ header {
     background: #000;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -51,6 +53,7 @@ nav a:hover {
     margin: 15px 0;
 }
 
+/* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 10px;
@@ -69,13 +72,15 @@ nav a:hover {
     background: #111;
 }
 
-.services h2 {
-    margin-bottom: 30px;
+.services .description {
+    margin: 10px auto 40px;
+    max-width: 600px;
 }
 
 .items {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -106,6 +111,26 @@ nav a:hover {
 
 .about div {
     padding-left: 30px;
+    max-width: 600px;
+}
+
+/* GALERÍA */
+.gallery {
+    text-align: center;
+    padding: 60px 20px;
+    background: #111;
+}
+
+.gallery-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* CONTACTO */
@@ -149,6 +174,7 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+
     .about img {
         width: 80%;
         margin-bottom: 20px;
