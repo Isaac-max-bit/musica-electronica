@@ -1,1043 +1,438 @@
-/* ================================
-   RESET Y BASE
+/* ===============================
+   RESET + VARIABLES
 ================================ */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ================================
-   VARIABLES
-================================ */
 :root {
-    --primary: #031655;
-    --secondary: #1bd6b8;
-    --yellow: #fffb11;
-
-    --dark: #0a0a0a;
-    --light: #ffffff;
-
-    --text-main: #f1f1f1;
-    --text-muted: #cfcfcf;
+  --bg-dark: #0a0a0a;
+  --bg-secondary: #111;
+  --primary: #1bd6b8;
+  --accent: #fffb11;
+  --text-main: #ffffff;
+  --text-muted: #cfcfcf;
 }
 
-/* ================================
-   BASE GLOBAL
-================================ */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Arial", sans-serif;
-    background: var(--dark);
-    color: var(--light);
-    line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-a,
-button,
-.card,
-.evento,
-.artista {
-    transition: all 0.3s ease;
+/* ===============================
+   ANIMACIONES BASE
+================================ */
+.animate {
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
-/* ================================
+.fade-up {
+  animation: fadeUp 1s ease forwards;
+}
+
+.fade-left {
+  animation: fadeLeft 1s ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 0.9s ease forwards;
+}
+
+/* ===============================
+   KEYFRAMES
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===============================
    NAVBAR
 ================================ */
 .navbar {
-    width: 100%;
-    padding: 20px 60px;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar .logo {
-    font-size: 1.4rem;
-    font-weight: bold;
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
 }
 
 .navbar nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: var(--light);
-    font-size: 1rem;
+  margin-left: 22px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .navbar nav a:hover {
-    color: var(--yellow);
+  color: var(--accent);
 }
 
-/* ================================
-   BOTÓN GLOBAL
-================================ */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--secondary);
-    color: black;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background: var(--yellow);
-}
-
-/* ================================
+/* ===============================
    HERO
 ================================ */
 .hero {
-    background: url("../img/fondo-electronica.jpg") center/cover no-repeat;
-    padding: 140px 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+  min-height: 100vh;
+  background: url("../img/fondo-electronica.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .hero-content {
-    width: 80%;
-    max-width: 900px;
+  max-width: 800px;
+}
+
+.section-tag {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--primary);
+  margin-bottom: 15px;
+  display: inline-block;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    animation: fadeIn 1.8s ease forwards;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: var(--text-main);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
 }
 
-/* ================================
-   SECCIÓN DESTACADA
+/* ===============================
+   BOTÓN
 ================================ */
-.destacado {
-    display: flex;
-    align-items: center;
-    padding: 80px 60px;
-        background: var(--primary);
-
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--primary);
+  color: #000;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.destacado img {
-    width: 50%;
-    border-radius: 10px;
+.btn:hover {
+  background: var(--accent);
+  transform: translateY(-4px);
 }
 
-.destacado-text {
-    width: 50%;
-    padding-left: 40px;
-}
-
-.destacado-text h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.destacado-text p {
-    margin-bottom: 15px;
-    color: var(--text-muted);
-}
-
-/* ================================
-   WHY ELECTROBEAT – DISEÑO MODERNO
+/* ===============================
+   SOBRE
 ================================ */
-.why-modern {
-    padding: 120px 60px;
-    background: linear-gradient(180deg, #031655, #020b2e);
-}
-
-/* HEADER */
-.why-header {
-    max-width: 900px;
-    margin: 0 auto 80px;
-    text-align: center;
-}
-
-.section-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    font-weight: bold;
-    color: var(--secondary);
-    margin-bottom: 15px;
-}
-
-.why-header h2 {
-    font-size: 2.7rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.why-header p {
-    font-size: 1.05rem;
-    color: var(--text-main);
-    line-height: 1.6;
-}
-
-/* GRID */
-.why-grid {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-/* CARD */
-.why-card {
-    background: rgba(255, 255, 255, 0.06);
-    padding: 45px 35px;
-    border-radius: 24px;
-    text-align: center;
-    position: relative;
-    transition: all 0.4s ease;
-    overflow: hidden;
-}
-
-/* Glow superior */
-.why-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at top,
-        rgba(27, 214, 184, 0.18),
-        transparent 65%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.why-card:hover::before {
-    opacity: 1;
-}
-
-.why-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* ICONO */
-.why-icon {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-/* TEXTO */
-.why-card h3 {
-    font-size: 1.35rem;
-    margin-bottom: 12px;
-    color: var(--yellow);
-}
-
-.why-card p {
-    font-size: 0.95rem;
-    color: var(--text-main);
-    line-height: 1.6;
-}
-
-/* ================================
-   WHY RESPONSIVE
-================================ */
-@media (max-width: 1000px) {
-    .why-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .why-modern {
-        padding: 100px 25px;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .why-header h2 {
-        font-size: 2.2rem;
-    }
-}
-
-
-/* ================================
-   SERVICIOS – DISEÑO MODERNO
-================================ */
-.services-modern {
-    padding: 120px 60px;
-    background: linear-gradient(180deg, #0d0d0d, #151515);
-}
-
-/* HEADER */
-.services-header {
-    max-width: 800px;
-    margin: 0 auto 70px;
-    text-align: center;
-}
-
-.services-header h2 {
-    font-size: 2.6rem;
-    margin-bottom: 18px;
-}
-
-.services-header p {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-
-/* GRID */
-.services-grid {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
-}
-
-/* CARD */
-.service-card {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 22px;
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Glow sutil */
-.service-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at top,
-        rgba(27, 214, 184, 0.15),
-        transparent 60%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.service-card:hover::before {
-    opacity: 1;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.07);
-}
-
-/* ICONO */
-.service-icon {
-    font-size: 2.6rem;
-    margin-bottom: 18px;
-}
-
-/* TEXTO */
-.service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-    color: var(--secondary);
-}
-
-.service-card p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* ================================
-   SERVICIOS RESPONSIVE
-================================ */
-@media (max-width: 1000px) {
-    .services-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .services-modern {
-        padding: 100px 25px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .services-header h2 {
-        font-size: 2.2rem;
-    }
-}
-
-/* ================================
-   EVENTOS – DISEÑO MODERNO
-================================ */
-.events-modern {
-    padding: 120px 60px;
-    background: radial-gradient(circle at top, #0f1a3a, #070707);
-}
-
-/* HEADER */
-.events-header {
-    max-width: 800px;
-    margin: 0 auto 70px;
-    text-align: center;
-}
-
-.section-tag {
-    display: inline-block;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: var(--secondary);
-    margin-bottom: 12px;
-}
-
-.events-header h2 {
-    font-size: 2.6rem;
-    margin-bottom: 18px;
-}
-
-.events-header p {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-
-/* GRID */
-.events-grid {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-}
-
-/* CARD */
-.event-card {
-    position: relative;
-    border-radius: 22px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-    transition: transform 0.4s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-10px);
-}
-
-.event-card img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-}
-
-/* OVERLAY INFO */
-.event-info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 28px;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.85),
-        rgba(0, 0, 0, 0.1)
-    );
-}
-
-.event-date {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    color: var(--secondary);
-}
-
-.event-info h3 {
-    margin: 8px 0 4px;
-    font-size: 1.4rem;
-}
-
-.event-info p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-/* CTA */
-.events-cta {
-    margin-top: 60px;
-    text-align: center;
-}
-
-.events-btn {
-    padding: 14px 46px;
-    border-radius: 50px;
-}
-
-/* ================================
-   EVENTOS RESPONSIVE
-================================ */
-@media (max-width: 1000px) {
-    .events-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .event-card img {
-        height: 360px;
-    }
-}
-
-@media (max-width: 600px) {
-    .events-modern {
-        padding: 100px 25px;
-    }
-
-    .events-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .events-header h2 {
-        font-size: 2.2rem;
-    }
-}
-
-
-/* ================================
-   NOSOTROS – DISEÑO MODERNO
-================================ */
-.about-modern {
-    padding: 120px 60px;
-    background: linear-gradient(180deg, #0b0b0b 0%, #111 100%);
+.about {
+  padding: 120px 60px;
+  background: var(--bg-secondary);
 }
 
 .about-wrapper {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 70px;
-    align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-/* IMAGEN */
-.about-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
-}
-
-/* TEXTO */
-.about-tag {
-    display: inline-block;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: var(--secondary);
-    margin-bottom: 12px;
+.about img {
+  width: 100%;
+  border-radius: 20px;
 }
 
 .about-content h2 {
-    font-size: 2.6rem;
-    line-height: 1.2;
-    margin-bottom: 25px;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
 }
 
-.about-intro {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 35px;
+.about-content p {
+  color: var(--text-muted);
+  margin-bottom: 15px;
 }
 
-/* BLOQUES VISIÓN / MISIÓN */
-.about-values {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.about-values h4 {
-    color: var(--secondary);
-    margin-bottom: 8px;
-    font-size: 1.1rem;
-}
-
-.about-values p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* ================================
-   NOSOTROS RESPONSIVE
+/* ===============================
+   ARTISTAS
 ================================ */
-@media (max-width: 900px) {
-    .about-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-content h2 {
-        font-size: 2.2rem;
-    }
-
-    .about-values {
-        grid-template-columns: 1fr;
-    }
+.artistas {
+  padding: 120px 60px;
+  background: linear-gradient(180deg, #020b2e, #000);
 }
 
-
-/* ================================
-   CONTACTO – NUEVO DISEÑO
-================================ */
-.contact-modern {
-    background: linear-gradient(180deg, #151515 0%, #0b0b0b 100%);
-    padding: 120px 60px;
-    position: relative;
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px;
 }
 
-/* separación visual fuerte del footer */
-.contact-modern::after {
-    content: "";
-    position: absolute;
-    bottom: -60px;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(180deg, transparent, #000);
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
-.contact-wrapper {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    align-items: center;
+.section-header p {
+  color: var(--text-muted);
 }
 
-/* TEXTO */
-.contact-info h2 {
-    font-size: 2.6rem;
-    margin-bottom: 20px;
-    color: var(--secondary);
+.artistas-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
-.contact-info p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-}
-
-/* FORM CARD */
-.contact-form {
-    background: #111;
-    padding: 40px;
-    border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    border: 1px solid rgba(27, 214, 184, 0.15);
-}
-
-/* INPUTS */
-.contact-form input,
-.contact-form textarea {
-    background: #1c1c1c;
-    border: 1px solid #2a2a2a;
-    color: var(--light);
-    padding: 14px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-}
-
-.contact-form textarea {
-    min-height: 120px;
-    resize: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--secondary);
-}
-
-/* BOTÓN */
-.contact-form .btn {
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    border-radius: 10px;
-}
-
-/* ================================
-   CONTACTO RESPONSIVE
-================================ */
-@media (max-width: 900px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .contact-info h2 {
-        font-size: 2.2rem;
-    }
-}
-
-
-/* ================================
-   ARTISTAS SLIDER – CSS ONLY
-================================ */
-.slider-wrapper {
-    position: relative;
-    max-width: 1300px;
-    margin: auto;
-}
-
-/* CONTENEDOR DESLIZABLE */
-.artistas-slider {
-    display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 10px 5px 30px;
-}
-
-/* Ocultar scrollbar */
-.artistas-slider::-webkit-scrollbar {
-    display: none;
-}
-
-/* CARD */
 .artista-card {
-    min-width: 320px;
-    height: 420px;
-    scroll-snap-align: center;
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-    cursor: pointer;
+  height: 420px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
 }
 
 .artista-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 .artista-card:hover img {
-    transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-/* OVERLAY */
-.artista-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.85),
-        rgba(0, 0, 0, 0.2),
-        transparent
-    );
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+.artista-info {
+  position: absolute;
+  inset: 0;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
 }
 
-.artista-card:hover .artista-overlay {
-    opacity: 1;
+.artista-info span {
+  color: var(--primary);
+  font-size: 0.9rem;
 }
 
-.artista-overlay h3 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-.artista-overlay span {
-    font-size: 0.9rem;
-    color: var(--secondary);
-}
-
-/* BOTONES */
-.slider-btn {
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    border: none;
-    color: white;
-    font-size: 2.5rem;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.slider-btn:hover {
-    background: var(--secondary);
-    color: black;
-}
-
-.slider-btn.left {
-    left: -15px;
-}
-
-.slider-btn.right {
-    right: -15px;
-}
-
-/* ================================
-   SLIDER RESPONSIVE
+/* ===============================
+   EVENTOS (ANIMACIONES MEJORADAS)
 ================================ */
-@media (max-width: 768px) {
-    .slider-btn {
-        display: none;
-    }
-
-    .artista-card {
-        min-width: 260px;
-        height: 360px;
-    }
+.eventos {
+  padding: 120px 60px;
+  background: radial-gradient(circle at top, #0f1a3a, #050505);
 }
 
-
-
-/* ================================
-   FOOTER – DISEÑO MEJORADO
-================================ */
-footer {
-    background: linear-gradient(180deg, #000 0%, #050505 100%);
-    padding: 70px 0 25px;
-    color: var(--text-muted);
+.eventos-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
-.footer-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 40px;
+/* CARD */
+.evento-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* LOGO + DESCRIPCIÓN */
-.footer-logo span {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--secondary);
-    letter-spacing: 1px;
+/* HOVER */
+.evento-card:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.65);
 }
 
-.footer-logo p {
-    margin-top: 15px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-muted);
+.evento-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-/* TÍTULOS */
-.footer-links h4,
-.footer-info h4,
-.footer-social h4 {
-    margin-bottom: 18px;
-    font-size: 1.1rem;
-    color: var(--light);
-    position: relative;
-}
-
-/* Subrayado elegante */
-.footer-links h4::after,
-.footer-info h4::after,
-.footer-social h4::after {
-    content: "";
-    width: 35px;
-    height: 2px;
-    background: var(--secondary);
-    display: block;
-    margin-top: 6px;
-}
-
-/* LINKS */
-.footer-links a {
-    display: block;
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--yellow);
-    transform: translateX(6px);
+.evento-card:hover img {
+  transform: scale(1.08);
 }
 
 /* INFO */
-.footer-info p {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    color: var(--text-muted);
+.evento-info {
+  padding: 25px;
+  background: linear-gradient(180deg, #000, #050505);
 }
 
-/* REDES SOCIALES */
-.footer-social .social-icons {
-    margin-top: 10px;
+.evento-info span {
+  font-size: 0.8rem;
+  color: var(--primary);
+  letter-spacing: 2px;
 }
 
-.footer-social .social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background: #111;
-    color: var(--secondary);
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.evento-info h3 {
+  margin: 10px 0 5px;
 }
 
-.footer-social .social-icons a:hover {
-    background: var(--secondary);
-    color: #000;
-    transform: translateY(-4px);
+.evento-info p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
-/* LÍNEA FINAL */
+/* ===============================
+   CONTACTO
+================================ */
+.contacto {
+  padding: 120px 60px;
+  background: #0b0b0b;
+  text-align: center;
+}
+
+.contact-wrapper {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  background: #1c1c1c;
+  border: 1px solid #2a2a2a;
+  color: var(--text-main);
+  border-radius: 8px;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  background: linear-gradient(180deg, #000 0%, #050505 100%);
+  padding: 80px 0 30px;
+  color: var(--text-muted);
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-brand h3 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.footer h4 {
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
 .footer-bottom {
-    margin-top: 50px;
-    text-align: center;
-    border-top: 1px solid #1f1f1f;
-    padding-top: 18px;
-    font-size: 0.9rem;
-    color: #777;
+  margin-top: 50px;
+  text-align: center;
+  border-top: 1px solid #1f1f1f;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #777;
 }
 
-/* ================================
-   FOOTER RESPONSIVE
-================================ */
-@media (max-width: 900px) {
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        text-align: center;
-    }
-
-    .footer-links h4::after,
-    .footer-info h4::after,
-    .footer-social h4::after {
-        margin: 8px auto 0;
-    }
-
-    .footer-social .social-icons a {
-        margin-right: 8px;
-    }
-}
-
-@media (max-width: 500px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-
-/* ================================
-   ANIMACIONES
-================================ */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ================================
+/* ===============================
    RESPONSIVE
 ================================ */
-@media (max-width: 992px) {
-    .destacado,
-    .sobre {
-        flex-direction: column;
-        text-align: center;
-    }
+@media (max-width: 900px) {
+  .about-wrapper,
+  .artistas-grid,
+  .eventos-grid,
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
 
-    .destacado img,
-    .sobre img {
-        width: 90%;
-        margin-bottom: 20px;
-    }
+  .navbar {
+    padding: 18px 25px;
+  }
 
-    .destacado-text,
-    .sobre div {
-        width: 100%;
-        padding-left: 0;
-    }
-
-    .services-box,
-    .eventos-grid,
-    .artistas-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar nav {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .services-box,
-    .eventos-grid,
-    .artistas-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .why-items {
-        flex-direction: column;
-    }
-
-    .navbar {
-        padding: 20px;
-    }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
