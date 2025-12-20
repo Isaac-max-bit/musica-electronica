@@ -2,32 +2,45 @@
 // ElectroBeat - Interacciones JS
 // ===============================
 
-// 1️⃣ Mensaje en consola
-console.log("🎧 ElectroBeat cargado correctamente");
+// 1️⃣ Alerta de bienvenida al cargar la página
+window.addEventListener("load", () => {
+  alert("🎧 Bienvenido a ElectroBeat 2025");
+  console.log("ElectroBeat cargado correctamente");
+});
 
-// 2️⃣ Cambiar texto del botón del hero al hacer clic
+// 2️⃣ Cambiar texto del botón del hero
 const heroBtn = document.querySelector(".hero .btn");
 
 heroBtn.addEventListener("click", () => {
-  heroBtn.textContent = "🎶 Artistas cargando...";
+  alert("🎶 Explorando artistas...");
+  heroBtn.textContent = "🎵 Cargando artistas...";
 });
 
-// 3️⃣ Mostrar mensaje al enviar el formulario
+// 3️⃣ Alerta al enviar el formulario
 const contactForm = document.querySelector(".contact-form");
 
 contactForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // evita recargar la página
+  e.preventDefault();
 
-  alert("✅ Mensaje enviado correctamente. ¡Nos vemos en ElectroBeat!");
-
+  alert("✅ Mensaje enviado con éxito. ¡Gracias por contactarnos!");
   contactForm.reset();
 });
 
-// 4️⃣ Interacción extra: resaltar evento al hacer clic
+// 4️⃣ Alerta + efecto al hacer clic en eventos
 const eventos = document.querySelectorAll(".evento-card");
 
 eventos.forEach((evento) => {
   evento.addEventListener("click", () => {
+    alert("📍 Evento seleccionado");
     evento.style.outline = "3px solid #1bd6b8";
+  });
+});
+
+// 5️⃣ Alerta genérica para TODOS los botones
+const botones = document.querySelectorAll("button, .btn");
+
+botones.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    console.log("Botón presionado");
   });
 });
