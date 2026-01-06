@@ -3,202 +3,275 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ElectroBeat | Música Electrónica</title>
+  <title>ElectroBeat | Siente el Pulso de la Electrónica</title>
+
+  <meta name="description" content="El festival de música electrónica más grande de 2025. DJs internacionales y experiencias únicas.">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+
   <link rel="stylesheet" href="css/style.css" />
-  <script src="main.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="navbar">
-    <div class="logo">ElectroBeat</div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#about">Sobre</a>
-      <a href="#artistas">Artistas</a>
-      <a href="#eventos">Eventos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a href="#inicio" class="logo">⚡ ElectroBeat</a>
 
-  <!-- ================= HERO / INICIO ================= -->
+    <nav aria-label="Navegación principal">
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
   <section id="inicio" class="hero">
-    <div class="hero-content animate fade-up">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content animate">
       <span class="section-tag">FESTIVAL ELECTRÓNICO</span>
       <h1>ElectroBeat 2025</h1>
-      <p>Donde la música electrónica, las luces y la energía se encuentran.</p>
-      <a href="#artistas" class="btn">Explorar artistas</a>
-    </div>
-  </section>
+      <p>Donde la música, las luces y la energía se encuentran.</p>
 
-  <!-- ================= SOBRE EL EVENTO ================= -->
-  <section id="about" class="about">
-    <div class="about-wrapper animate fade-left">
-      <img src="img/dj-mix.jpg" alt="DJ en vivo">
-
-      <div class="about-content">
-        <span class="section-tag">SOBRE EL EVENTO</span>
-        <h2>Una experiencia que se siente</h2>
-        <p>
-          ElectroBeat es un festival de música electrónica creado para conectar
-          artistas, público y tecnología en un solo escenario.
-        </p>
-        <p>
-          Vive una experiencia multisensorial con DJs internacionales,
-          visuales envolventes y una energía inolvidable.
-        </p>
+      <div class="hero-actions">
+        <a href="#artistas" class="btn btn-primary">Explorar artistas</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= ARTISTAS ================= -->
-  <section id="artistas" class="artistas">
-    <div class="section-header animate fade-up">
-      <span class="section-tag">ARTISTAS</span>
-      <h2>Line Up Principal</h2>
-      <p>Talento internacional y nacional en un solo escenario</p>
+<section class="about" id="about">
+  <div class="container about-grid">
+
+    <div class="about-text animate">
+      <span class="section-tag">SOBRE EL FESTIVAL</span>
+      <h2>Más que música.<br>Una experiencia electrónica</h2>
+
+      <p>
+        ElectroBeat es un festival creado para quienes sienten la música
+        más allá del sonido. Un espacio donde la tecnología, el arte visual
+        y la energía colectiva se fusionan.
+      </p>
+
+      <p>
+        Cada edición reúne artistas internacionales, escenarios inmersivos
+        y una producción pensada para elevar todos los sentidos.
+      </p>
+
+      <ul class="about-highlights">
+        <li>🔊 Sonido de alto impacto</li>
+        <li>🎧 DJs internacionales</li>
+        <li>✨ Visuales y luces envolventes</li>
+      </ul>
     </div>
 
-    <div class="artistas-grid">
+    <div class="about-image animate">
+      <img src="img/dj-mix.jpg" alt="ElectroBeat Festival Experience">
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="artistas" class="artistas section">
+    <header class="section-header container animate">
+      <span class="section-tag">LINE UP</span>
+      <h2>Artistas Principales</h2>
+      <p>Talento global vibrando en un solo escenario.</p>
+    </header>
+
+    <div class="container artistas-grid">
+      <!-- Artista -->
       <article class="artista-card animate zoom-in">
-        <img src="img/artist1.jpg" alt="Artista 1">
+        <img src="img/artist1.jpg" alt="DJ Nova" loading="lazy">
         <div class="artista-info">
           <h3>DJ Nova</h3>
           <span>Techno</span>
         </div>
       </article>
 
-      <article class="artista-card animate zoom-in">
-        <img src="img/artist2.jpg" alt="Artista 2">
+      <article class="artista-card animate zoom-in delay-1">
+        <img src="img/artist2.jpg" alt="Cyber Rhythm" loading="lazy">
         <div class="artista-info">
-          <h3>Luna Beat</h3>
-          <span>House</span>
+          <h3>Cyber Rhythm</h3>
+          <span>House / Deep</span>
         </div>
       </article>
 
-      <article class="artista-card animate zoom-in">
-        <img src="img/artist3.jpg" alt="Artista 3">
+      <article class="artista-card animate zoom-in delay-2">
+        <img src="img/artist3.jpg" alt="Volt" loading="lazy">
         <div class="artista-info">
-          <h3>Neon Pulse</h3>
-          <span>EDM</span>
+          <h3>Volt</h3>
+          <span>Hardstyle</span>
+        </div>
+      </article>
+
+          <article class="artista-card animate zoom-in delay-2">
+        <img src="img/artist4.jpg" alt="Marshmello" loading="lazy">
+        <div class="artista-info">
+          <h3>Marshmello</h3>
+          <span>Techno</span>
+        </div>
+      </article>
+
+
+          <article class="artista-card animate zoom-in delay-2">
+        <img src="img/artist5.jpg" alt="Mouse" loading="lazy">
+        <div class="artista-info">
+          <h3>Mouse</h3>
+          <span>Hardstyle</span>
+        </div>
+      </article>
+
+          <article class="artista-card animate zoom-in delay-2">
+        <img src="img/artist6.jpg" alt="Skrillex" loading="lazy">
+        <div class="artista-info">
+          <h3>Skrillex</h3>
+          <span>House / Deep</span>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- ================= EVENTOS ================= -->
-  <section id="eventos" class="eventos">
-    <div class="section-header animate fade-up">
-      <span class="section-tag">EVENTOS</span>
-      <h2>Próximas Fechas</h2>
-      <p>No te pierdas ninguna experiencia ElectroBeat</p>
+<section class="events" id="eventos">
+  <div class="container">
+
+    <header class="section-header">
+      <h2>Próximos Eventos</h2>
+      <p>La experiencia ElectroBeat en su máximo esplendor</p>
+    </header>
+
+    <div class="events-grid">
+
+      <article class="event-card animate">
+        <div class="event-image">
+          <img src="img/evento1.jpg" alt="Neon Night Festival">
+          <span class="event-date">12 JUL</span>
+        </div>
+        <div class="event-content">
+          <h3>Neon Night</h3>
+          <p class="event-location">📍 Medellín · Plaza Mayor</p>
+          <p class="event-desc">
+            Beats intensos, visuales futuristas y DJs internacionales.
+          </p>
+          <button class="event-btn">Ver detalles</button>
+        </div>
+      </article>
+
+      <article class="event-card animate">
+        <div class="event-image">
+          <img src="img/evento2.jpg" alt="Electric Pulse Festival">
+          <span class="event-date">03 AGO</span>
+        </div>
+        <div class="event-content">
+          <h3>Electric Pulse</h3>
+          <p class="event-location">📍 Bogotá · Movistar Arena</p>
+          <p class="event-desc">
+            Una fusión perfecta entre sonido, luz y energía electrónica.
+          </p>
+          <button class="event-btn">Ver detalles</button>
+        </div>
+      </article>
+
+      <article class="event-card animate">
+        <div class="event-image">
+          <img src="img/evento3.jpg" alt="Dark Frequency Festival">
+          <span class="event-date">21 SEP</span>
+        </div>
+        <div class="event-content">
+          <h3>Dark Frequency</h3>
+          <p class="event-location">📍 Cali · Arena Tech</p>
+          <p class="event-desc">
+            Frecuencias profundas en una atmósfera hipnótica.
+          </p>
+          <button class="event-btn">Ver detalles</button>
+        </div>
+      </article>
+
     </div>
+  </div>
+</section>
 
-    <div class="eventos-grid">
-      <article class="evento-card animate fade-up">
-        <img src="img/evento1.jpg" alt="Evento 1">
-        <div class="evento-info">
-          <span>15 JUL 2025</span>
-          <h3>Bogotá Night</h3>
-          <p>Festival urbano de música electrónica</p>
-        </div>
-      </article>
 
-      <article class="evento-card animate fade-up">
-        <img src="img/evento2.jpg" alt="Evento 2">
-        <div class="evento-info">
-          <span>02 AGO 2025</span>
-          <h3>Medellín Beat</h3>
-          <p>Una noche de beats y luces</p>
-        </div>
-      </article>
-
-      <article class="evento-card animate fade-up">
-        <img src="img/evento3.jpg" alt="Evento 3">
-        <div class="evento-info">
-          <span>20 SEP 2025</span>
-          <h3>Cali Electro</h3>
-          <p>El sur vibra con música electrónica</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ================= CONTACTO ================= -->
- <section id="contacto" class="contacto">
-  <div class="contact-wrapper animate fade-up">
-    <span class="section-tag">CONTÁCTANOS</span>
+<section id="contacto" class="contacto section">
+  <div class="container contact-wrapper animate">
+    <span class="section-tag">CONECTA</span>
     <h2>Hablemos ✨</h2>
-    <p>¿Tienes preguntas o quieres más información sobre el evento? Escríbenos.</p>
+    <p class="contact-intro">
+      ¿Tienes una pregunta o quieres vivir ElectroBeat desde adentro?
+    </p>
 
     <form class="contact-form">
+      
       <div class="input-group">
-        <input type="text" required />
-        <label>Nombre completo</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Nombre completo</label>
       </div>
 
       <div class="input-group">
-        <input type="email" required />
-        <label>Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+        <label for="email">Correo electrónico</label>
       </div>
 
       <div class="input-group">
-        <textarea required></textarea>
-        <label>Mensaje</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="message">Mensaje</label>
       </div>
 
-      <button type="submit" class="btn">Enviar mensaje</button>
+      <button type="submit" class="btn btn-primary">
+        Enviar mensaje
+      </button>
+
     </form>
   </div>
 </section>
 
 
-  <!-- ================= FOOTER ================= -->
+
+</main>
+
 <footer class="footer">
-  <div class="footer-container">
+  <div class="container footer-main">
 
-    <!-- Marca -->
-    <div class="footer-brand animate fade-up">
-      <h3>⚡ ElectroBeat</h3>
-      <p>
-        Música electrónica, eventos y experiencias sonoras
-        creadas para verdaderos amantes del beat.
+    <div class="footer-section footer-brand">
+      <h2 class="footer-logo">⚡ ElectroBeat</h2>
+      <p class="footer-desc">
+        Siente el pulso de la noche. Experiencias electrónicas que conectan música, luz y tecnología.
       </p>
-    </div>
 
-    <!-- Navegación -->
-    <div class="footer-links animate fade-up" style="animation-delay: 0.2s;">
-      <h4>Navegación</h4>
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#artistas">Artistas</a>
-      <a href="#eventos">Eventos</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-
-    <!-- Contacto -->
-    <div class="footer-contact animate fade-up" style="animation-delay: 0.4s;">
-      <h4>Contacto</h4>
-      <p>📍 Medellín, Colombia</p>
-      <p>📧 contacto@electrobeat.com</p>
-      <p>☎ +57 300 000 0000</p>
-    </div>
-
-    <!-- Redes -->
-    <div class="footer-social animate fade-up" style="animation-delay: 0.6s;">
-      <h4>Síguenos</h4>
-      <div class="social-icons">
-        <a href="#" aria-label="Instagram">📷</a>
-        <a href="#" aria-label="YouTube">▶</a>
-        <a href="#" aria-label="Spotify">🎵</a>
-        <a href="#" aria-label="Web">🌐</a>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Spotify">Spotify</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
       </div>
+    </div>
+
+    <nav class="footer-section">
+      <h3>Explora</h3>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-section">
+      <h3>Ciudad</h3>
+      <p>Medellín, Colombia</p>
+      <p>Festival 2025</p>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2025 ElectroBeat — Todos los derechos reservados</p>
+  <div class="footer-copy">
+    <p>© 2025 ElectroBeat. Todos los derechos reservados.</p>
   </div>
 </footer>
 

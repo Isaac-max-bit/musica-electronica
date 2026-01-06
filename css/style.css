@@ -1,19 +1,23 @@
-/* ===============================
-   RESET + VARIABLES
-================================ */
-* {
+/* =========================================================
+   1. VARIABLES Y RESET
+   ========================================================= */
+:root {
+  --primary: #1bd6b8;
+  --accent: #fffb11;
+  --bg-dark: #050505;
+  --bg-card: #111111;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --neon-glow: 0 0 20px rgba(27, 214, 184, 0.25);
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --bg-dark: #0a0a0a;
-  --bg-secondary: #111;
-  --primary: #1bd6b8;
-  --accent: #fffb11;
-  --text-main: #ffffff;
-  --text-muted: #cfcfcf;
 }
 
 html {
@@ -21,424 +25,420 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--bg-dark);
   color: var(--text-main);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ===============================
-   ANIMACIONES BASE
-================================ */
-.animate {
-  opacity: 0;
-  animation-fill-mode: forwards;
+/* =========================================================
+   2. UTILIDADES GLOBALES
+   ========================================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.fade-up {
-  animation: fadeUp 1s ease forwards;
-}
-
-.fade-left {
-  animation: fadeLeft 1s ease forwards;
-}
-
-.zoom-in {
-  animation: zoomIn 0.9s ease forwards;
-}
-
-/* ===============================
-   KEYFRAMES
-================================ */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* ===============================
-   NAVBAR
-================================ */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(8px);
-  padding: 18px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--primary);
-}
-
-.navbar nav a {
-  margin-left: 22px;
-  text-decoration: none;
-  color: var(--text-main);
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.navbar nav a:hover {
-  color: var(--accent);
-}
-
-/* ===============================
-   HERO
-================================ */
-.hero {
-  min-height: 100vh;
-  background: url("../img/fondo-electronica.jpg") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.hero-content {
-  max-width: 800px;
+.section {
+  padding: 90px 0;
 }
 
 .section-tag {
-  font-size: 0.75rem;
-  letter-spacing: 3px;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  font-weight: 700;
   color: var(--primary);
-  margin-bottom: 15px;
-  display: inline-block;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
   text-transform: uppercase;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 30px;
-}
-
-/* ===============================
-   BOTÓN
-================================ */
-.btn {
-  display: inline-block;
-  padding: 14px 36px;
-  background: var(--primary);
-  color: #000;
-  text-decoration: none;
-  border-radius: 40px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background: var(--accent);
-  transform: translateY(-4px);
-}
-
-/* ===============================
-   SOBRE
-================================ */
-.about {
-  padding: 120px 60px;
-  background: var(--bg-secondary);
-}
-
-.about-wrapper {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.about img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-.about-content h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-}
-
-.about-content p {
-  color: var(--text-muted);
-  margin-bottom: 15px;
-}
-
-/* ===============================
-   ARTISTAS
-================================ */
-.artistas {
-  padding: 120px 60px;
-  background: linear-gradient(180deg, #020b2e, #000);
 }
 
 .section-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 70px;
+  margin-bottom: 70px;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 10px;
 }
 
 .section-header p {
   color: var(--text-muted);
 }
 
-.artistas-grid {
-  max-width: 1200px;
-  margin: auto;
+/* =========================================================
+   3. BOTONES
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--neon-glow);
+}
+
+/* =========================================================
+   4. NAVBAR
+   ========================================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+}
+
+.navbar.navbar-scrolled {
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+  opacity: 1;
+}
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+.hero {
+  min-height: 100vh;
+  background-image: url('../img/fondo-electronica.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(5,5,5,0.95)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 35px;
+}
+
+/* =========================================================
+   6. ABOUT
+   ========================================================= */
+
+
+.about {
+  padding: 110px 0;
+  background: linear-gradient(180deg, #242121, #1c2d3d);
+}
+
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 60px;
+  align-items: center;
+}
+
+/* Texto */
+.about-text h2 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin: 18px 0 22px;
+  color: #48ec71;
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #c5c5c5;
+  margin-bottom: 18px;
+}
+
+/* Lista */
+.about-highlights {
+  margin-top: 28px;
+  display: grid;
+  gap: 12px;
+  color: #000000;  
+  
+}
+
+.about-highlights li {
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Imagen */
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 26px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.15);
+}
+
+/* Marco decorativo */
+.about-image::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 32px;
+  border: 2px dashed rgba(27,214,184,0.4);
+  z-index: -1;
+}
+
+
+/* =========================================================
+   7. ARTISTAS
+   ========================================================= */
+.artistas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 35px;
 }
 
 .artista-card {
-  height: 420px;
-  border-radius: 22px;
-  overflow: hidden;
   position: relative;
+  height: 420px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: var(--transition);
 }
 
 .artista-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  filter: grayscale(25%);
+  transition: var(--transition);
+}
+
+.artista-card:hover {
+  transform: translateY(-10px);
 }
 
 .artista-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  filter: grayscale(0%);
 }
 
 .artista-info {
   position: absolute;
-  inset: 0;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  bottom: 0;
+  width: 100%;
+  padding: 35px;
+  background: linear-gradient(transparent, rgba(72, 110, 238, 0.95));
+}
+
+.artista-info h3 {
+  font-size: 1.5rem;
 }
 
 .artista-info span {
   color: var(--primary);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* ===============================
-   EVENTOS (ANIMACIONES MEJORADAS)
-================================ */
-.eventos {
-  padding: 120px 60px;
-  background: radial-gradient(circle at top, #0f1a3a, #050505);
+/* =========================================================
+   8. EVENTOS
+   ========================================================= */
+
+.events {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #d5f157, #1e1f20);
 }
 
-.eventos-grid {
-  max-width: 1200px;
-  margin: auto;
+.events-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 35px;
 }
 
-/* CARD */
-.evento-card {
-  border-radius: 22px;
+/* Card */
+.event-card {
+  background: #ffffff;
+  border-radius: 20px;
   overflow: hidden;
-  background: #000;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 18px 45px rgba(27, 26, 26, 0.08);
+  transition: var(--transition);
 }
 
-/* HOVER */
-.evento-card:hover {
-  transform: translateY(-14px) scale(1.02);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.65);
+.event-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
 }
 
-.evento-card img {
+/* Imagen */
+.event-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.event-image img {
   width: 100%;
-  height: 360px;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform .6s ease;
 }
 
-.evento-card:hover img {
+.event-card:hover .event-image img {
   transform: scale(1.08);
 }
 
-/* ===============================
-   EVENTOS MEJORADOS
-================================ */
-.eventos {
-  padding: 120px 60px;
-  background: radial-gradient(circle at top, #0f1a3a, #050505);
-}
-
-/* GRID */
-.eventos-grid {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
-}
-
-/* CARD */
-.evento-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  background: #000;
-  cursor: pointer;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-/* SOMBRA + LEVITAR */
-.evento-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(27, 214, 184, 0.25);
-}
-
-/* IMAGEN */
-.evento-card img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  transition: transform 0.8s ease, filter 0.8s ease;
-}
-
-/* ZOOM + OSCURECER */
-.evento-card:hover img {
-  transform: scale(1.15);
-  filter: brightness(0.55);
-}
-
-/* OVERLAY ANIMADO */
-.evento-card::after {
-  content: "";
+/* Fecha */
+.event-date {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.2),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.evento-card:hover::after {
-  opacity: 1;
-}
-
-/* INFO */
-.evento-info {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  padding: 28px;
-  z-index: 2;
-  transition: bottom 0.6s ease;
-}
-
-.evento-card:hover .evento-info {
-  bottom: 0;
-}
-
-/* TEXTO */
-.evento-info span {
+  top: 15px;
+  right: 15px;
+  background: var(--primary);
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 999px;
   font-size: 0.75rem;
-  color: var(--primary);
-  letter-spacing: 3px;
+  font-weight: 700;
 }
 
-.evento-info h3 {
-  margin: 10px 0 6px;
-  font-size: 1.4rem;
+/* Contenido */
+.event-content {
+  padding: 26px;
 }
 
-.evento-info p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+.event-content h3 {
+  font-size: 1.2rem;
+  color: #0a1620;
+  margin-bottom: 8px;
+}
+
+.event-location {
+  font-size: 0.8rem;
+  color: #1bd6b8;
+  margin-bottom: 12px;
+}
+
+.event-desc {
+  font-size: 0.85rem;
+  color: #4d6478;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Botón */
+.event-btn {
+  background: transparent;
+  border: 2px solid var(--primary);
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.event-btn:hover {
+  background: rgb(63, 49, 49);
+  color: #000;
 }
 
 
-/* ===============================
-   CONTACTO MEJORADO
-================================ */
+
+/* =========================================================
+   9. CONTACTO
+   ========================================================= */
+
+
 .contacto {
-  padding: 120px 60px;
-  background: radial-gradient(circle at top, #0e1a2b, #050505);
-  text-align: center;
+  background: linear-gradient(180deg, #0f1f2a 0%, #050505 85%);
 }
 
-.contact-wrapper {
-  max-width: 520px;
-  margin: auto;
+.contact-intro {
+  margin: 15px 0 40px;
+  color: #b6c8d9;
+  font-size: 0.9rem;
 }
 
-.contacto h2 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.contacto p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 40px;
-}
-
-/* FORM */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 35px;
 }
 
 /* INPUT GROUP */
@@ -449,128 +449,154 @@ body {
 .input-group input,
 .input-group textarea {
   width: 100%;
-  padding: 16px 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid #2a2a2a;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 16px 18px;
   color: var(--text-main);
-  border-radius: 12px;
-  font-size: 0.95rem;
-  outline: none;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  transition: var(--transition);
 }
 
-/* TEXTAREA */
 .input-group textarea {
   resize: none;
-  min-height: 130px;
 }
 
 /* LABEL FLOTANTE */
 .input-group label {
   position: absolute;
-  left: 14px;
   top: 50%;
+  left: 18px;
   transform: translateY(-50%);
-  color: #888;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
   pointer-events: none;
-  background: #050505;
-  padding: 0 6px;
-  transition: all 0.3s ease;
+  background: transparent;
+  transition: var(--transition);
 }
 
-/* EFECTO FOCUS */
+/* ESTADOS */
 .input-group input:focus,
 .input-group textarea:focus {
+  outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(27, 214, 184, 0.15);
+  box-shadow: 0 0 0 2px rgba(27,214,184,0.15);
 }
 
-/* LABEL ANIMADO */
 .input-group input:focus + label,
-.input-group input:valid + label,
 .input-group textarea:focus + label,
-.input-group textarea:valid + label {
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label {
   top: -8px;
-  font-size: 0.7rem;
+  left: 14px;
+  background: #0f1f2a;
+  padding: 0 6px;
+  font-size: 0.65rem;
   color: var(--primary);
 }
 
 /* BOTÓN */
 .contact-form .btn {
-  margin-top: 10px;
   align-self: center;
-  padding: 14px 40px;
+  padding: 16px 40px;
 }
 
 
-/* ===============================
-   FOOTER
-================================ */
+/* =========================================================
+   10. FOOTER
+   ========================================================= */
+
+
 .footer {
-  background: linear-gradient(180deg, #000 0%, #050505 100%);
+  background: linear-gradient(180deg, #0a1620 0%, #020202 85%);
   padding: 80px 0 30px;
-  color: var(--text-muted);
+  position: relative;
+  overflow: hidden;
 }
 
-.footer-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+/* Luz ambiental sutil */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(27,214,184,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,251,17,0.05), transparent 45%);
+  pointer-events: none;
+}
+
+.footer-main {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 50px;
+  position: relative;
+  z-index: 2;
 }
 
-.footer-brand h3 {
-  font-size: 1.6rem;
+.footer-logo {
   color: var(--primary);
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
 }
 
-.footer h4 {
-  color: var(--text-main);
-  margin-bottom: 15px;
-}
-
-.footer-links a {
-  display: block;
-  color: var(--text-muted);
-  text-decoration: none;
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--accent);
-  transform: translateX(6px);
-}
-
-.footer-bottom {
-  margin-top: 50px;
-  text-align: center;
-  border-top: 1px solid #1f1f1f;
-  padding-top: 20px;
+.footer-desc {
+  color: #b7c8d8;
   font-size: 0.85rem;
-  color: #777;
+  line-height: 1.6;
+  max-width: 320px;
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 900px) {
-  .about-wrapper,
-  .artistas-grid,
-  .eventos-grid,
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
+/* Links */
+.footer h3 {
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
 
-  .navbar {
-    padding: 18px 25px;
-  }
+.footer ul {
+  list-style: none;
+}
 
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+.footer li {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #a5b8c9;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--primary);
+}
+
+/* Redes sociales */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.footer-social a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: rgba(255,255,255,0.06);
+}
+
+.footer-social a:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* Copy */
+.footer-copy {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.7rem;
+  color: #8fa3b5;
+  position: relative;
+  z-index: 2;
 }
